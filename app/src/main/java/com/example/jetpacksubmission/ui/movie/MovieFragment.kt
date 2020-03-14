@@ -8,11 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.example.jetpacksubmission.R
 import com.example.jetpacksubmission.data.movie.upcoming.UpcomingResultsItem
-import com.example.jetpacksubmission.ui.adapter.UpcomingAdapter
+import com.example.jetpacksubmission.ui.adapter.UpcomingMovieAdapter
 import kotlinx.android.synthetic.main.fragment_movie.*
 
 /**
@@ -20,7 +19,7 @@ import kotlinx.android.synthetic.main.fragment_movie.*
  */
 class MovieFragment : Fragment(), MovieView {
 
-    private lateinit var upcomingAdapter: UpcomingAdapter
+    private lateinit var upcomingMovieAdapter: UpcomingMovieAdapter
     private lateinit var viewModel: MovieViewModel
 
     override fun onCreateView(
@@ -36,7 +35,7 @@ class MovieFragment : Fragment(), MovieView {
         Log.d("MovieFragment", "Enter onActivityCreated")
         if (activity != null) {
             Log.d("MovieFragment", "Enter onActivityCreated - activity not null")
-            upcomingAdapter = UpcomingAdapter()
+            upcomingMovieAdapter = UpcomingMovieAdapter()
 
             //set viewmodel and get the data
             viewModel = ViewModelProvider(
@@ -51,13 +50,13 @@ class MovieFragment : Fragment(), MovieView {
                     "MovieFragment",
                     "Enter onActivityCreated - viewmodel.UpcomingListData not null"
                 )
-                upcomingAdapter.setData(viewModel.getUpcomingListData()!!)
+                upcomingMovieAdapter.setData(viewModel.getUpcomingListData()!!)
             }
 
             with(fragmentmovie_rv_upcoming) {
                 layoutManager = GridLayoutManager(context, 2, GridLayoutManager.VERTICAL, false)
                 setHasFixedSize(true)
-                adapter = upcomingAdapter
+                adapter = upcomingMovieAdapter
             }
         }
     }
@@ -65,7 +64,7 @@ class MovieFragment : Fragment(), MovieView {
     override fun onSuccess(data: ArrayList<UpcomingResultsItem?>?) {
         data?.let {
             Log.d("MovieFragment", "Enter onSuccess")
-            upcomingAdapter.setData(it)
+            upcomingMovieAdapter.setData(it)
         }
     }
 

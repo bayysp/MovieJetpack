@@ -10,7 +10,7 @@ import com.example.jetpacksubmission.R
 import com.example.jetpacksubmission.data.movie.upcoming.UpcomingResultsItem
 import kotlinx.android.synthetic.main.item_list_upcoming.view.*
 
-class UpcomingAdapter : RecyclerView.Adapter<UpcomingAdapter.UpcomingViewHolder>() {
+class UpcomingMovieAdapter : RecyclerView.Adapter<UpcomingMovieAdapter.UpcomingViewHolder>() {
 
     private val upcomingData = ArrayList<UpcomingResultsItem?>()
     private val BASE_IMAGE_URL = "https://image.tmdb.org/t/p/w185/"
@@ -35,14 +35,14 @@ class UpcomingAdapter : RecyclerView.Adapter<UpcomingAdapter.UpcomingViewHolder>
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): UpcomingAdapter.UpcomingViewHolder {
+    ): UpcomingMovieAdapter.UpcomingViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_list_upcoming, parent, false)
         return UpcomingViewHolder(view)
     }
 
     override fun getItemCount(): Int = upcomingData.size
 
-    override fun onBindViewHolder(holder: UpcomingAdapter.UpcomingViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: UpcomingMovieAdapter.UpcomingViewHolder, position: Int) {
         holder.bind(upcomingData[position])
     }
 }

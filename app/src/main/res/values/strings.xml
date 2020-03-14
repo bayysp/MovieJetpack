@@ -10,4 +10,5 @@
     <string name="_10_0">10.0</string>
     <string name="upcoming_movie">Upcoming Movie</string>
     <string name="popular_movie">Popular Movie</string>
+    <string name="popular_tv_show">Popular Tv Show</string>
 </resources>
