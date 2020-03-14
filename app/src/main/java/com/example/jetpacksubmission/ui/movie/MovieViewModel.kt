@@ -11,12 +11,26 @@ import retrofit2.Response
 
 class MovieViewModel : ViewModel() {
 
+    private var listUpcomingData : ArrayList<UpcomingResultsItem?>? = ArrayList()
+
+    fun setUpcomingListData(listUpcomingData: ArrayList<UpcomingResultsItem?>?){
+        Log.d("MovieViewModel","Enter setUpcomingListData")
+        this.listUpcomingData = listUpcomingData
+    }
+
+    fun getUpcomingListData() : ArrayList<UpcomingResultsItem?>?{
+        Log.d("MovieViewModel","Enter getUpcomingListData")
+        return listUpcomingData
+    }
+
     fun setUpcomingMovie(movieView: MovieView) {
+
+        Log.d("MovieViewModel","Enter setUpcomingData")
 
         ApiMain().getMovieApi().getUpcomingMovie()
             .enqueue(object : Callback<UpcomingMovieResponse> {
                 override fun onFailure(call: Call<UpcomingMovieResponse>, t: Throwable) {
-                    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                    Log.d("MovieViewModel","Enter setUpcomingListData , onFailure get data error")
                 }
 
                 override fun onResponse(
@@ -24,8 +38,10 @@ class MovieViewModel : ViewModel() {
                     response: Response<UpcomingMovieResponse>
                 ) {
                     if (response.code() == 200) {
+                        Log.d("MovieViewModel","Enter setUpcomingListData, onResponse code 200")
                         val upcomingResponse = response.body()
                         movieView.onSuccess(upcomingResponse?.results)
+                        setUpcomingListData(upcomingResponse?.results)
                         Log.d("MovieViewModel", upcomingResponse?.results.toString())
                     }
                 }

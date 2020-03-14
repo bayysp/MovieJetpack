@@ -1,5 +1,6 @@
 package com.example.jetpacksubmission.ui.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -25,6 +26,7 @@ class UpcomingAdapter : RecyclerView.Adapter<UpcomingAdapter.UpcomingViewHolder>
     }
 
     fun setData(items: ArrayList<UpcomingResultsItem?>){
+        Log.d("UpcomingAdapter","Enter setData")
         upcomingData.clear()
         upcomingData.addAll(items)
         notifyDataSetChanged()
