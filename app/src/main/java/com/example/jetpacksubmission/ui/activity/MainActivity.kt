@@ -1,4 +1,4 @@
-package com.example.jetpacksubmission.ui.main
+package com.example.jetpacksubmission.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

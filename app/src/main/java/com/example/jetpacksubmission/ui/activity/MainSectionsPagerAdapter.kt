@@ -1,4 +1,4 @@
-package com.example.jetpacksubmission.ui.main
+package com.example.jetpacksubmission.ui.activity
 
 import android.content.Context
 import androidx.annotation.StringRes
@@ -6,8 +6,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.example.jetpacksubmission.R
-import com.example.jetpacksubmission.ui.movie.MovieFragment
-import com.example.jetpacksubmission.ui.tvshow.TvshowFragment
+import com.example.jetpacksubmission.ui.fragment.movie.MovieFragment
+import com.example.jetpacksubmission.ui.fragment.tvshow.TvshowFragment
 
 class MainSectionsPagerAdapter(private val context: Context, fragmentManager: FragmentManager) :
     FragmentPagerAdapter(

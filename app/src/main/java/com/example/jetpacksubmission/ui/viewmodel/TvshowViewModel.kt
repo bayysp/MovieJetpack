@@ -1,10 +1,11 @@
-package com.example.jetpacksubmission.ui.tvshow
+package com.example.jetpacksubmission.ui.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.example.jetpacksubmission.data.ApiMain
 import com.example.jetpacksubmission.data.tvshow.popular.PopularResultsItem
 import com.example.jetpacksubmission.data.tvshow.popular.PopularTvshowResponse
+import com.example.jetpacksubmission.ui.fragment.tvshow.TvshowView
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

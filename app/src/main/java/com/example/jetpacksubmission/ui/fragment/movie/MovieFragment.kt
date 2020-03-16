@@ -1,4 +1,4 @@
-package com.example.jetpacksubmission.ui.movie
+package com.example.jetpacksubmission.ui.fragment.movie
 
 import android.os.Bundle
 import android.util.Log
@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.jetpacksubmission.R
 import com.example.jetpacksubmission.data.movie.upcoming.UpcomingResultsItem
 import com.example.jetpacksubmission.ui.adapter.UpcomingMovieAdapter
+import com.example.jetpacksubmission.ui.viewmodel.MovieViewModel
 import kotlinx.android.synthetic.main.fragment_movie.*
 
 /**

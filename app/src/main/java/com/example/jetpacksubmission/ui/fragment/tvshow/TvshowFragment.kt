@@ -1,4 +1,4 @@
-package com.example.jetpacksubmission.ui.tvshow
+package com.example.jetpacksubmission.ui.fragment.tvshow
 
 import android.os.Bundle
 import android.util.Log
@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.jetpacksubmission.R
 import com.example.jetpacksubmission.data.tvshow.popular.PopularResultsItem
 import com.example.jetpacksubmission.ui.adapter.PopularTvshowAdapter
+import com.example.jetpacksubmission.ui.viewmodel.TvshowViewModel
 import kotlinx.android.synthetic.main.fragment_tvshow.*
 
 /**
