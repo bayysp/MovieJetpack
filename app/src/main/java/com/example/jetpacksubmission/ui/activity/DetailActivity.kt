@@ -56,7 +56,17 @@ class DetailActivity : AppCompatActivity(), MovieDetailView {
             .error(R.drawable.ic_error)
             .into(activitymain_toolbarimage)
 
-        contentdetail_tv_description.text = dataRotate?.overview.toString()
+        Glide.with(applicationContext)
+            .load(BASE_IMAGE_URL + dataRotate?.posterPath.toString())
+            .apply(RequestOptions.placeholderOf(R.drawable.ic_loading))
+            .error(R.drawable.ic_error)
+            .into(activitydetail_iv_poster)
+
+        contentdetail_tv_title.text = dataRotate.title.toString()
+        contentdetail_tv_description.text = dataRotate.overview.toString()
+
+        val rateFloat : Float = dataRotate.voteAverage!!.toFloat()
+        contentdetail_ratingbar.rating = (rateFloat/2.0).toFloat()
     }
 
     private fun displayDetail() {
@@ -68,7 +78,18 @@ class DetailActivity : AppCompatActivity(), MovieDetailView {
             .error(R.drawable.ic_error)
             .into(activitymain_toolbarimage)
 
+        Glide.with(applicationContext)
+            .load(BASE_IMAGE_URL + detailData?.posterPath.toString())
+            .apply(RequestOptions.placeholderOf(R.drawable.ic_loading))
+            .error(R.drawable.ic_error)
+            .into(activitydetail_iv_poster)
+
+        contentdetail_tv_title.text = detailData?.title.toString()
+        contentdetail_tv_rating.text = detailData?.voteAverage.toString()
         contentdetail_tv_description.text = detailData?.overview.toString()
+
+        val rateFloat : Float = detailData.voteAverage!!.toFloat()
+        contentdetail_ratingbar.rating = (rateFloat/2.0).toFloat()
     }
 
     override fun onSuccess(data: DetailMovieResponse) {

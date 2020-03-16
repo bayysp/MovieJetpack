@@ -46,7 +46,7 @@ class MovieFragment : Fragment(), MovieView {
             viewModel.setUpcomingMovie(this)
 
             //if the phone get rotate, check view model, if not null, put the data to adapter
-            if (viewModel.getUpcomingListData() != null) {
+            if (viewModel.getUpcomingListData()?.size != null) {
                 Log.d(
                     "MovieFragment",
                     "Enter onActivityCreated - viewmodel.UpcomingListData not null"
