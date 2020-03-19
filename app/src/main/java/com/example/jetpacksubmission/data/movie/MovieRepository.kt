@@ -14,4 +14,5 @@ interface MovieRepository {
 //  https://api.themoviedb.org/3/movie/338762?api_key=05faacecb1bb8a123ad56542b1708bad
     @GET(BuildConfig.TSDB_API_KEY+"movie/{id}?api_key="+BuildConfig.API_KEY)
     fun getMovieDetail(@Path("id") id : String?) : Call<DetailMovieResponse>
+
 }

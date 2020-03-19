@@ -5,17 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".ui.activity.DetailActivity">
+    tools:context=".ui.activity.DetailTvshowActivity">
 
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/activitydetail_app_bar"
+        android:id="@+id/activitydetailtvshow_app_bar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/app_bar_height"
         android:fitsSystemWindows="true"
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
-            android:id="@+id/activitydetail_toolbar_layout"
+            android:id="@+id/activitydetailtvshow_toolbar_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
@@ -24,7 +24,7 @@
             app:toolbarId="@+id/toolbar">
 
             <ImageView
-                android:id="@+id/activitydetail_toolbarimage"
+                android:id="@+id/activitydetailtvshow_toolbarimage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fitsSystemWindows="true"
@@ -32,7 +32,7 @@
                 app:layout_collapseMode="parallax" />
 
             <ImageView
-                android:id="@+id/activitydetail_iv_poster"
+                android:id="@+id/activitydetailtvshow_iv_poster"
                 android:layout_width="120dp"
                 android:layout_height="180dp"
                 android:layout_gravity="bottom"
@@ -44,9 +44,8 @@
                 android:focusable="true"
                 app:layout_collapseMode="parallax" />
 
-
             <androidx.appcompat.widget.Toolbar
-                android:id="@+id/activitydetail_toolbar"
+                android:id="@+id/activitydetailtvshow_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
@@ -55,17 +54,15 @@
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
+    <include layout="@layout/content_detail_tvshow" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/activitydetail_fab"
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/fab_margin"
-        app:layout_anchor="@id/activitydetail_app_bar"
+        app:layout_anchor="@id/activitydetailtvshow_app_bar"
         app:layout_anchorGravity="bottom|end"
         app:srcCompat="@android:drawable/ic_dialog_email" />
-
-
-    <include layout="@layout/content_detail" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

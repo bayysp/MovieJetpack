@@ -104,4 +104,6 @@
     <string name="action_settings">Settings</string>
     <string name="poster">Poster</string>
     <string name="rate">Rate</string>
+    <string name="title_activity_detail_tvshow">" "</string>
+    <string name="tvshow_name">Tvshow Name</string>
 </resources>

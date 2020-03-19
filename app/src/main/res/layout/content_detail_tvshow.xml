@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".ui.activity.DetailActivity"
-    tools:showIn="@layout/activity_detail">
+    tools:context=".ui.activity.DetailTvshowActivity"
+    tools:showIn="@layout/activity_detail_tvshow">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,10 +15,10 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/contentdetail_tv_title"
+            android:id="@+id/contentdetailtvshow_tv_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Movie Name"
+            android:text="@string/tvshow_name"
             android:textSize="28sp"
             android:textStyle="italic" />
 
@@ -34,7 +34,7 @@
             android:orientation="horizontal">
 
             <RatingBar
-                android:id="@+id/contentdetail_ratingbar"
+                android:id="@+id/contentdetailtvshow_ratingbar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:clickable="false"
@@ -45,8 +45,8 @@
                 tools:targetApi="lollipop" />
 
             <TextView
-                android:id="@+id/contentdetail_tv_rating"
-                android:layout_width="wrap_content"
+                android:id="@+id/contentdetailtvshow_tv_rating"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="8dp"
                 android:layout_weight="1"
@@ -57,7 +57,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/contentdetail_tv_description"
+            android:id="@+id/contentdetailtvshow_tv_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/large_text" />

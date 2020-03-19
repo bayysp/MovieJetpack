@@ -54,7 +54,7 @@ class DetailActivity : AppCompatActivity(), MovieDetailView {
             .load(BASE_IMAGE_URL + dataRotate?.backdropPath.toString())
             .apply(RequestOptions.placeholderOf(R.drawable.ic_loading))
             .error(R.drawable.ic_error)
-            .into(activitymain_toolbarimage)
+            .into(activitydetail_toolbarimage)
 
         Glide.with(applicationContext)
             .load(BASE_IMAGE_URL + dataRotate?.posterPath.toString())
@@ -64,6 +64,7 @@ class DetailActivity : AppCompatActivity(), MovieDetailView {
 
         contentdetail_tv_title.text = dataRotate.title.toString()
         contentdetail_tv_description.text = dataRotate.overview.toString()
+        contentdetail_tv_rating.text = dataRotate?.voteAverage.toString()
 
         val rateFloat : Float = dataRotate.voteAverage!!.toFloat()
         contentdetail_ratingbar.rating = (rateFloat/2.0).toFloat()
@@ -76,7 +77,7 @@ class DetailActivity : AppCompatActivity(), MovieDetailView {
             .load(BASE_IMAGE_URL + detailData?.backdropPath.toString())
             .apply(RequestOptions.placeholderOf(R.drawable.ic_loading))
             .error(R.drawable.ic_error)
-            .into(activitymain_toolbarimage)
+            .into(activitydetail_toolbarimage)
 
         Glide.with(applicationContext)
             .load(BASE_IMAGE_URL + detailData?.posterPath.toString())

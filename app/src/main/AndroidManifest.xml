@@ -12,6 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ui.activity.DetailTvshowActivity"
+            android:label="@string/title_activity_detail_tvshow"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".ui.activity.DetailActivity"
             android:label=""
             android:theme="@style/AppTheme.NoActionBar" />

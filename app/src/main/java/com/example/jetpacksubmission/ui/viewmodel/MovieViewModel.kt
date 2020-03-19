@@ -55,6 +55,8 @@ class MovieViewModel : ViewModel() {
             })
     }
 
+    //--------------------------------------------//
+
     private var listDetailData: DetailMovieResponse? = DetailMovieResponse()
 
     fun getMovieDetailData() : DetailMovieResponse?{
@@ -84,7 +86,7 @@ class MovieViewModel : ViewModel() {
                     response: Response<DetailMovieResponse>
                 ) {
                     if (response.code() == 200) {
-                        Log.d("MovieViewModel", "Enter setDetailListData, onResponse code 200")
+                        Log.d("MovieViewModel", "Enter setDetailMovie, onResponse code 200")
                         val detailMovieResponse = response.body()!!
                         movieDetailView.onSuccess(detailMovieResponse)
                         setMovieDetailData(detailMovieResponse)

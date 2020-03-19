@@ -1,5 +1,6 @@
 package com.example.jetpacksubmission.ui.adapter
 
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.jetpacksubmission.R
 import com.example.jetpacksubmission.data.tvshow.popular.PopularResultsItem
+import com.example.jetpacksubmission.ui.activity.DetailActivity
+import com.example.jetpacksubmission.ui.activity.DetailTvshowActivity
 import kotlinx.android.synthetic.main.item_list_upcoming.view.*
 
 class PopularTvshowAdapter : RecyclerView.Adapter<PopularTvshowAdapter.PopularViewHolder>() {
@@ -30,10 +33,21 @@ class PopularTvshowAdapter : RecyclerView.Adapter<PopularTvshowAdapter.PopularVi
                 item_list_upcoming_tv_rate.text = popularResultsItem?.voteAverage.toString()
 
                 Glide.with(itemView.context)
-                    .load(BASE_IMAGE_URL+popularResultsItem?.posterPath.toString())
+                    .load(BASE_IMAGE_URL + popularResultsItem?.posterPath.toString())
                     .apply(RequestOptions.placeholderOf(R.drawable.ic_loading))
                     .error(R.drawable.ic_error)
                     .into(item_list_upcoming_iv_thumb)
+
+                item_list_upcoming_cv.setOnClickListener {
+                    val intent = Intent(context, DetailTvshowActivity::class.java)
+                    Log.d(
+                        "PopularTvshowAdapter",
+                        "Send ID : " + popularResultsItem?.id + " to DetailTvshowActivity"
+                    )
+                    intent.putExtra("id_tvshow", popularResultsItem?.id.toString())
+
+                    context.startActivity(intent)
+                }
             }
         }
     }
