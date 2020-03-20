@@ -1,9 +1,7 @@
 package com.example.jetpacksubmission.ui.activity
 
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.util.Log
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
@@ -11,9 +9,9 @@ import com.bumptech.glide.request.RequestOptions
 import com.example.jetpacksubmission.R
 import com.example.jetpacksubmission.data.movie.detail.DetailMovieResponse
 import com.example.jetpacksubmission.ui.viewmodel.MovieViewModel
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_detail.*
 import kotlinx.android.synthetic.main.content_detail.*
-import kotlinx.android.synthetic.main.item_list_upcoming.view.*
 
 class DetailActivity : AppCompatActivity(), MovieDetailView {
 

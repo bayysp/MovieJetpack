@@ -10,12 +10,9 @@ import androidx.test.rule.ActivityTestRule
 import com.example.jetpacksubmission.R
 import com.example.jetpacksubmission.data.ApiMain
 import com.example.jetpacksubmission.data.movie.upcoming.UpcomingMovieResponse
-import com.example.jetpacksubmission.data.movie.upcoming.UpcomingResultsItem
 import com.example.jetpacksubmission.data.tvshow.popular.PopularTvshowResponse
 import com.example.jetpacksubmission.ui.viewmodel.MovieViewModel
 import com.example.jetpacksubmission.ui.viewmodel.TvshowViewModel
-import kotlinx.android.synthetic.main.fragment_movie.*
-import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test

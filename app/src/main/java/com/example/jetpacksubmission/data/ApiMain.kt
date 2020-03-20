@@ -1,10 +1,8 @@
 package com.example.jetpacksubmission.data
 
-import android.app.Application
 import com.example.jetpacksubmission.BuildConfig
 import com.example.jetpacksubmission.data.movie.MovieRepository
 import com.example.jetpacksubmission.data.tvshow.TvshowRepository
-import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
