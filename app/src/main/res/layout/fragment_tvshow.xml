@@ -23,7 +23,6 @@
             android:id="@+id/fragmenttvshow_rv_popular"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
             tools:listitem="@layout/item_list_upcoming" />
 
         <ProgressBar
