@@ -3,7 +3,9 @@ package com.example.jetpacksubmission.ui.viewmodel
 import android.util.Log
 import com.example.jetpacksubmission.data.ApiMain
 import com.example.jetpacksubmission.data.movie.detail.DetailMovieResponse
+import com.example.jetpacksubmission.data.movie.upcoming.UpcomingResultsItem
 import com.example.jetpacksubmission.ui.fragment.movie.MovieView
+import org.junit.Assert
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -16,43 +18,27 @@ class MovieViewModelTest {
 
     private lateinit var viewModel : MovieViewModel
 
-    @Mock
-    private lateinit var movieView: MovieView
-
     @Before
     fun setUp(){
-        MockitoAnnotations.initMocks(this)
         viewModel = MovieViewModel()
     }
 
     @Test
-    fun setUpcomingListData() {
-
-    }
-
-    @Test
-    fun getUpcomingListData() {
-    }
-
-    @Test
     fun setUpcomingMovie() {
-        viewModel.setUpcomingMovie(movieView)
-
-        val upcomingMovie = viewModel.getUpcomingListData()
-        assertNotNull(upcomingMovie)
-        assertEquals(20, upcomingMovie?.size)
-    }
-
-    @Test
-    fun getMovieDetailData() {
-    }
-
-    @Test
-    fun setMovieDetailData() {
+        val response = ApiMain().getMovieApi().getUpcomingMovie().execute()
+        val result = response.body()
+        assertNotNull(result)
+        assertEquals(20,result?.results?.size)
     }
 
     @Test
     fun setDetailMovie() {
+        val response = ApiMain().getMovieApi().getMovieDetail("338762").execute()
+        val result = response.body()
+        assertNotNull(result)
+        assertEquals("338762",result?.id.toString())
+        assertEquals("Bloodshot",result?.originalTitle)
+        assertEquals(5.9, result?.voteAverage)
     }
 
 }
