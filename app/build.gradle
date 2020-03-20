@@ -20,6 +20,10 @@ android {
         buildConfigField "String", "API_KEY", '"05faacecb1bb8a123ad56542b1708bad"'
     }
 
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -50,6 +54,9 @@ dependencies {
 
     //testing
     implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.2"
+    testImplementation 'org.mockito:mockito-core:3.0.0'
+    testImplementation "org.mockito:mockito-inline:3.0.0"
 
     implementation 'com.google.android.material:material:1.1.0'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.2.1'
